@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Figurasgeometricas.Clases;
+using System.Globalization;
 namespace Figurasgeometricas
 {
     public partial class Form1 : Form
@@ -39,9 +40,43 @@ namespace Figurasgeometricas
 
         private void btnCalcRomb_Click(object sender, EventArgs e)
         {
-             
+            Romboide romboide = new Romboide();
+            romboide.base_ = Convert.ToDouble(txtBaseRomb.Text);
+            romboide.altura = Convert.ToDouble(txtAltRomb.Text);
+
+            romboide.Area = romboide.calcularArea(romboide.base_, romboide.altura);
+
+            txtResultRomb.Text = Convert.ToString(romboide.Area);
 
 
+        }
+
+        private void txtBaseRomb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
+
+            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back
+                            || (e.KeyChar == 'm' || e.KeyChar == 'M')
+                            || (e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator))
+                        || ((e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator)
+                            && txt.Text.Contains('.'))
+                        || ((e.KeyChar == 'm' || e.KeyChar == 'M')
+                            && txt.Text.ToUpper().Contains('M'));
+        }
+
+        private void txtAltRomb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
+
+            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back
+                            || (e.KeyChar == 'm' || e.KeyChar == 'M')
+                            || (e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator))
+                        || ((e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator)
+                            && txt.Text.Contains('.'))
+                        || ((e.KeyChar == 'm' || e.KeyChar == 'M')
+                            && txt.Text.ToUpper().Contains('M'));
         }
     }
 }

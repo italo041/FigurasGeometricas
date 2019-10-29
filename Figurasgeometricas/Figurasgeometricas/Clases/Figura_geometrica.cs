@@ -8,9 +8,20 @@ namespace Figurasgeometricas
 {
     class Figura_geometrica
     {
-        private float area;
-        private float altura;
+        private double area;
 
+        public double Area
+        {
+            get
+            {
+                return area;
+            }
+
+            set
+            {
+                area = value;
+            }
+        }
     }
     
 }

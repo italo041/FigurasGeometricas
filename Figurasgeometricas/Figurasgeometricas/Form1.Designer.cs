@@ -154,6 +154,7 @@
             this.txtBaseRomb.Name = "txtBaseRomb";
             this.txtBaseRomb.Size = new System.Drawing.Size(100, 22);
             this.txtBaseRomb.TabIndex = 2;
+            this.txtBaseRomb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBaseRomb_KeyPress);
             // 
             // txtAltRomb
             // 
@@ -161,6 +162,7 @@
             this.txtAltRomb.Name = "txtAltRomb";
             this.txtAltRomb.Size = new System.Drawing.Size(100, 22);
             this.txtAltRomb.TabIndex = 3;
+            this.txtAltRomb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAltRomb_KeyPress);
             // 
             // btnCalcRomb
             // 

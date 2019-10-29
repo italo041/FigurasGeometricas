@@ -8,6 +8,13 @@ namespace Figurasgeometricas.Clases
 {
     class Romboide : Figura_geometrica
     {
-        private float base_;
+        public double base_;
+        public double altura;
+
+        public double calcularArea(double base_, double altura)
+        {
+            Area = base_ * altura;
+            return Area;
+        }
     }
 }

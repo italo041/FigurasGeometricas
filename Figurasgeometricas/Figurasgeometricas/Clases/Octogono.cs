@@ -8,7 +8,9 @@ namespace Figurasgeometricas.Clases
 {
     class Octogono : Figura_geometrica
     {
-        private float longitud_lados;
-        private float apotema;
+        public float longitud_lado;
+        public float apotema;
+
+        
     }
 }

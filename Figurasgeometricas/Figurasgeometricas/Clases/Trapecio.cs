@@ -8,8 +8,8 @@ namespace Figurasgeometricas.Clases
 {
     class Trapecio : Figura_geometrica
     {
-        private float base_mayor;
-        private float base_menor;
+        public float base_mayor;
+        public float base_menor;
     
     }
 }
