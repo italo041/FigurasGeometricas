@@ -41,10 +41,10 @@ namespace Figurasgeometricas
         private void btnCalcRomb_Click(object sender, EventArgs e)
         {
             Romboide romboide = new Romboide();
-            romboide.base_ = Convert.ToDouble(txtBaseRomb.Text);
-            romboide.altura = Convert.ToDouble(txtAltRomb.Text);
+            romboide.Base = Convert.ToDouble(txtBaseRomb.Text);
+            romboide.Altura = Convert.ToDouble(txtAltRomb.Text);
 
-            romboide.Area = romboide.calcularArea(romboide.base_, romboide.altura);
+            romboide.CalcularArea();
 
             txtResultRomb.Text = Convert.ToString(romboide.Area);
 
@@ -57,12 +57,9 @@ namespace Figurasgeometricas
             CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
 
             e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back
-                            || (e.KeyChar == 'm' || e.KeyChar == 'M')
-                            || (e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator))
+                            ||  (e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator))
                         || ((e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator)
-                            && txt.Text.Contains('.'))
-                        || ((e.KeyChar == 'm' || e.KeyChar == 'M')
-                            && txt.Text.ToUpper().Contains('M'));
+                            && txt.Text.Contains('.'));
         }
 
         private void txtAltRomb_KeyPress(object sender, KeyPressEventArgs e)

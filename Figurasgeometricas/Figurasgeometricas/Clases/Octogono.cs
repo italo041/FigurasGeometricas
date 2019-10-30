@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Figurasgeometricas.Clases
 {
-    class Octogono : Figura_geometrica
+    class Octogono
     {
         public float longitud_lado;
         public float apotema;

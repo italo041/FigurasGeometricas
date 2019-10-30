@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Figurasgeometricas
 {
-    class Figura_geometrica
+    abstract class Figura_geometrica
     {
         private double area;
 
@@ -22,6 +22,9 @@ namespace Figurasgeometricas
                 area = value;
             }
         }
+
+        public abstract void CalcularArea();
+
     }
-    
+
 }

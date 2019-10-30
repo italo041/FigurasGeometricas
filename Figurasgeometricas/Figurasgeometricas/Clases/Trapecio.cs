@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Figurasgeometricas.Clases
 {
-    class Trapecio : Figura_geometrica
+    class Trapecio
     {
         public float base_mayor;
         public float base_menor;
