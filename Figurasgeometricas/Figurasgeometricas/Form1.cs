@@ -75,5 +75,26 @@ namespace Figurasgeometricas
                         || ((e.KeyChar == 'm' || e.KeyChar == 'M')
                             && txt.Text.ToUpper().Contains('M'));
         }
+
+        private void btnCalcOcto_Click(object sender, EventArgs e)
+        {
+            Octogono objOcto = new Octogono();
+            objOcto.Lado = Convert.ToDouble(txtLadoOcto.Text);
+
+            objOcto.CalcularArea();
+
+            txtResultOcto.Text = Convert.ToString(objOcto.Area);
+        }
+
+        private void txtLadoOcto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
+
+            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back
+                            || (e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator))
+                        || ((e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator)
+                            && txt.Text.Contains('.'));
+        }
     }
 }
