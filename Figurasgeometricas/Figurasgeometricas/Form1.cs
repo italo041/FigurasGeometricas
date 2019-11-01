@@ -96,5 +96,18 @@ namespace Figurasgeometricas
                         || ((e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator)
                             && txt.Text.Contains('.'));
         }
+
+        private void BtnCalcTra_Click(object sender, EventArgs e)
+        {
+            Trapecio objTra = new Trapecio();
+
+            objTra.Altura = Convert.ToDouble(txtAltTra.Text);
+            objTra.Bmayor = Convert.ToDouble(txtBMayor.Text);
+            objTra.Bmenor = Convert.ToDouble(txtBMenor.Text);
+
+            objTra.CalcularArea();
+
+            txtResultTra.Text = Convert.ToString(objTra.Area);
+        }
     }
 }
