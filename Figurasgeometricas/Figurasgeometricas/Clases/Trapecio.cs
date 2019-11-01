@@ -6,10 +6,19 @@ using System.Threading.Tasks;
 
 namespace Figurasgeometricas.Clases
 {
-    class Trapecio
+    class Trapecio : Figura_geometrica
     {
-        public float base_mayor;
-        public float base_menor;
-    
+        public double Bmayor { get; set; }
+        public double Bmenor { get; set; }
+        public double Altura { get; set; }
+
+        public Trapecio()
+        {
+        }
+
+        public override void CalcularArea()
+        {
+            Area = this.Altura * (this.Bmayor + this.Bmenor) / 2;
+        }
     }
 }
